@@ -102,7 +102,7 @@ query ($repo_owner: String!, $repo_name: String!, $environment: String!) {
     const nodes: Node[] = data.repository.deployments.nodes
 
     const activeDeployments = nodes.filter(
-      (node: Node) => node.ref.name === branch && node.state === 'ACTIVE'
+      (node: Node) => node.state === 'ACTIVE'
     )
 
     if (activeDeployments.length === 0) {
